@@ -25,14 +25,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(
-              left: MediaQuery.of(context).size.width / 2,
-              top: MediaQuery.of(context).size.width / 3,
+            child: Center(
+              child: CircleAvatar(
+                radius: 100,
+                backgroundImage:
+                    NetworkImage('https://i.ibb.co/sFtQKPs/default-pp.png'),
+              ),
             ),
-            child: CircleAvatar(
-              radius: 70,
-              backgroundImage: NetworkImage('https://ibb.co/HrXYt2G'),
-            ),
+          ),
+          SizedBox(
+            height: 100,
           ),
         ],
       ),
