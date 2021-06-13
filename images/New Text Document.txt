@@ -1,0 +1,20 @@
+{
+                      try{
+
+                        FirebaseAuth.instance.createUserWithEmailAndPassword(
+                        email: emailcontroller.text,
+                        password: passwordcontroller.text)
+                            .then((signeduser) {
+                        usercollection.doc(signeduser.user.uid).set({
+                        'full name': fullnamecontroller.text,
+                        'email': emailcontroller.text,
+                        'password': passwordcontroller.text,
+                        'uid': signeduser.user.uid,
+                        });
+                        }),
+                  } catch (e) {
+                      print(e);
+                      var snackbar = SnackBar(content: Text(e.toString(),style: mystyle(20),));
+                      Scaffold.of(context).showSnackbar(snackbar);
+    }
+                    }
